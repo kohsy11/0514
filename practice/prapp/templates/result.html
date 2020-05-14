@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css"href={% static 'result.css' %}>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = 'left'>
+        <div class = 'counting'> 
+            <p> 글자수 세기</p>
+        </div>
+        <div class = 'gray'>
+            <div class = 'text_length'>
+                공백 포함 : {{total_len}}
+            </div> 
+            <div class = 'no_blank'>
+                공백 제외 : {{no_blank}}
+            </div> 
+            <div class = 'word_count'>
+                단어 갯수 : {{word_count}}
+            </div>   
+        </div>
+    </div>
+    <div class = 'right'>
+        <div class = 'text_typed'>
+            {{text_typed}}
+        </div>
+    </div>
+</body>
+</html>

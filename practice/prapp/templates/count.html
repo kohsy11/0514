@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css"href={% static 'count.css' %}>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "title"> 
+        <div class = "wordcount">
+            <p> 글자수 세기</p>
+        </div>
+        <div class = "exp">
+            <p>글을 직접 작성하거나, <br> 복사해서 붙여 넣어주시면 <br> 글자수 계산이 됩니다</p>
+        </div>
+    </div>
+    <div class = "textbox">
+        <form action="{% url 'result' %}" method="POST">{% csrf_token %}
+            <textarea name="text" cols="80" rows="25"></textarea>
+            <input type="submit" value="제출하기" class = "button">
+        </form>
+    </div>
+</body>
+</html>
